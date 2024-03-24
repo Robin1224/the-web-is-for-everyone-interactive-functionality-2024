@@ -1,0 +1,20 @@
+<li class="house-card">
+  <a href="/house/<%= house.id %>">
+    <img
+      src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>"
+      alt="<%= house.title %>"
+    />
+    <div>
+      <h2><%= house.street %> <%= house.house_nr %></h2>
+      <span>
+        <% if (house.summary) { %> 
+          <%= house.summary %> 
+        <% } else { %> 
+          Geen samenvatting beschikbaar 
+        <% } %>
+      </span>
+      <span class="price">€<%= house.price %></span>
+      <span class="underlined">Bekijken</span>
+    </div>
+  </a>
+</li>

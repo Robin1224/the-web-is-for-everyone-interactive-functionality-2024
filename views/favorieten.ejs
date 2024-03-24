@@ -1,0 +1,8 @@
+<%- include('partials/head') %> <%- include('partials/nav') %>
+<ul class="houses">
+  <% data.forEach(currentHouse => { %>
+    <%- include('partials/house-card', {house: currentHouse}) %>
+  <% }) %>
+</ul>
+<script src="/scripts/main.js" defer></script>
+<%- include('partials/foot') %>

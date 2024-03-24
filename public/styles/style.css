@@ -1,0 +1,172 @@
+:root {
+  --primary-color: #f7a100;
+  --primary-color-2: #de9000;
+
+  --blue: #0071b3;
+  --blue-light: #E6F2F7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: #fff;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo {
+  width: 6.3125rem;
+  height: auto;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+ul.nav {
+  list-style: none;
+  display: flex;
+  max-width: 61.5rem;
+  padding: 0rem 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1 0 0;
+  width: 100%;
+}
+
+.nav-left {
+  display: flex;
+  height: 3.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-right {
+  display: flex;
+  height: 3.75rem;
+  justify-content: center;
+  align-items: center;
+}
+
+nav li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 0.75rem;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+
+  font-family: Proxima Nova, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.nav-right a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-right span {
+  height: 1rem;
+}
+
+.nav-right img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+nav li:hover {
+  cursor: pointer;
+  background-color: var(--primary-color-2);
+}
+
+nav li.li-logo:hover {
+  background-color: var(--primary-color);
+}
+
+ul.houses {
+  background-color: var(--blue-light);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 1rem;
+  padding: 1rem;
+  width: 90vw;
+  margin: auto;
+}
+
+.house-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid hsl(-0 0% 90%);
+  /* border-radius: 0.5rem; */
+  max-width: 20rem;
+  min-width: 12rem;
+  width: 22vw;
+  height: 22rem;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+}
+
+.house-card div {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.house-card a {
+  width: 100%;
+  height: 100%;
+}
+
+.house-card img {
+  width: auto;
+  height: 15rem;
+}
+
+.house-card h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--blue);
+
+}
+
+.house-card span {
+  font-weight: 400;
+  color: black;
+}
+
+.underlined {
+  text-decoration: underline;
+}
