@@ -15,7 +15,7 @@
       </span>
       <span class="price">€<%= house.price %></span>
       <span class="underlined">Bekijken</span>
-      <form class="rating-form" data-current-rating="<%- Math.floor(Math.random() * 6) %>">
+      <form class="rating-form" method="POST" data-current-rating="<%- Math.floor(Math.random() * 6) %>">
         <button type="submit" formaction="/rate/<%= house.id %>/1"><%- include('star-icon') %></button>
         <button type="submit" formaction="/rate/<%= house.id %>/2"><%- include('star-icon') %></button>
         <button type="submit" formaction="/rate/<%= house.id %>/3"><%- include('star-icon') %></button>
