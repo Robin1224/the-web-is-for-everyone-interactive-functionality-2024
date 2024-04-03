@@ -4,6 +4,8 @@
 
   --blue: #0071b3;
   --blue-light: #E6F2F7;
+
+  --gray: #616161;
 }
 
 * {
@@ -169,4 +171,58 @@ ul.houses {
 
 .underlined {
   text-decoration: underline;
+}
+
+.rating-form {
+  align-self: flex-end
+}
+
+.rating-form button {
+  background: none;
+	color: transparent;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  height: 1rem;
+  width: 1rem;
+}
+
+.rating-form svg {
+  height: 100%;
+  width: 100%;
+  fill: currentColor;
+}
+
+.rating-form polygon {
+  stroke: black;
+  stroke-width: 3px
+}
+
+.rating-form button:hover {
+  color: var(--primary-color-2);
+}
+
+/* Fill rating stars up to current rating count */
+/* Explanation: https://stackoverflow.com/a/74145405 (CC BY-SA 4.0) */
+
+.rating-form[data-current-rating="1"] > button:not( :nth-child( 1 ) ~ button )  {
+  color: var(--primary-color);
+}
+
+.rating-form[data-current-rating="2"] > button:not( :nth-child( 2 ) ~ button ) {
+  color: var(--primary-color);
+}
+
+.rating-form[data-current-rating="3"] > button:not( :nth-child( 3 ) ~ button )  {
+  color: var(--primary-color);
+}
+
+.rating-form[data-current-rating="4"] > button:not( :nth-child( 4 ) ~ button )  {
+  color: var(--primary-color);
+}
+
+.rating-form[data-current-rating="5"] > button:not( :nth-child( 5 ) ~ button )  {
+  color: var(--primary-color);
 }
