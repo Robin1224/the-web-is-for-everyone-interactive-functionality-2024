@@ -33,13 +33,13 @@ app.post("/", function (request, response) {
 // Maak een GET route voor een detailpagina met een request parameter id
 app.get("/favorieten", function (request, response) {
   // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
-  fetchJson("https://fdnd-agency.directus.app/items/f_list/6?fields=*.*.*").then(
-    (apiData) => {
-      console.log(apiData);
-      // Render favorieten.ejs uit de views map en geef de opgehaalde data mee
-      response.render("favorieten", apiData);
-    }
-  );
+  fetchJson(
+    "https://fdnd-agency.directus.app/items/f_list/6?fields=*.*.*"
+  ).then((apiData) => {
+    console.log(apiData);
+    // Render favorieten.ejs uit de views map en geef de opgehaalde data mee
+    response.render("favorieten", apiData);
+  });
 });
 
 // Get route voor een detailpagina met een request parameter id
@@ -54,23 +54,42 @@ app.get("/huis/:id/", function (request, response) {
   });
 });
 
-app.post("/rate/:id/:rating", function (request, response) {
+// app.post("/rate/:id/:rating", function (request, response) {
+//   // Gebruik de request parameter id en haal het juiste huis op
+//   fetchJson(
+//     "https://fdnd-agency.directus.app/items/f_list/6?fields=*.*.*"
+//   ).then((apiData) => {
+//     const id = request.params.id;
+//     const rating = request.params.rating;
+
+//     let house = apiData.find((house) => house.id == id);
+
+//     // if (house) {
+//     //   house.rating = rating;
+//     // }
+
+//     console.log(house);
+//     // PLACEHOLDER TOTDAT ER EEN ROUTE IN DE API AANGEMAAKT IS
+//   });
+// });
+
+app.post("/delete/:id", function (request, response) {
+  const id = request.params.id;
   // Gebruik de request parameter id en haal het juiste huis op
-  fetchJson("https://fdnd-agency.directus.app/items/f_list/6/?fields=*.*.*").then(
-    (apiData) => {
-      const id = request.params.id;
-      const rating = request.params.rating;
+  fetchJson("https://fdnd-agency.directus.app/items/f_list/6").then((apiData) => {
+    delete apiData.data.houses[id];
 
-      let house = apiData.data.find((house) => house.id == id);
-      
-      if (house) {
-        house.rating = rating;
-      }
+    fetch("https://fdnd-agency.directus.app/items/f_list/6", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(apiData),
+    });
 
-      console.log(house);
-      // PLACEHOLDER TOTDAT ER EEN ROUTE IN DE API AANGEMAAKT IS
-    }
-  );
+    console.log(`Deleted house with id: ${id}`);
+  });
+  response.redirect(303, "/favorieten");
 });
 
 // Stel het poortnummer in waar express op moet gaan luisteren

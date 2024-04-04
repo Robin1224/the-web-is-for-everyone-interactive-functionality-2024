@@ -1,5 +1,8 @@
 <li class="house-card">
   <a href="/house/<%= house.id %>">
+    <form method="post" action="/delete/<%= house.id %>">
+      <button type="submit" class="delete-house">X</button>
+    </form>
     <img
       src="https://fdnd-agency.directus.app/assets/<%= house.poster_image %>"
       alt="<%= house.title %>"

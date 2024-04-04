@@ -6,6 +6,7 @@
   --blue-light: #E6F2F7;
 
   --gray: #616161;
+  --border-color: hsl(-0 0% 90%);
 }
 
 * {
@@ -128,7 +129,7 @@ ul.houses {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid hsl(-0 0% 90%);
+  border: 1px solid var(--border-color);
   /* border-radius: 0.5rem; */
   max-width: 20rem;
   min-width: 12rem;
@@ -169,6 +170,23 @@ ul.houses {
   color: black;
 }
 
+.delete-house {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+  border-top: none;
+  border-right: none;
+  cursor: pointer;
+
+}
+
 .underlined {
   text-decoration: underline;
 }
@@ -196,7 +214,7 @@ ul.houses {
 }
 
 .rating-form polygon {
-  stroke: black;
+  stroke: var(--gray);
   stroke-width: 3px
 }
 
