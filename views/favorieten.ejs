@@ -1,7 +1,7 @@
 <%- include('partials/head') %> <%- include('partials/nav') %>
 <ul class="houses">
-  <% data.forEach(currentHouse => { %>
-    <%- include('partials/house-card', {house: currentHouse}) %>
+  <% data.houses.forEach(currentHouse => { %>
+    <%- include('partials/house-card', {house: currentHouse.f_houses_id}) %>
   <% }) %>
 </ul>
 <script src="/scripts/main.js" defer></script>
